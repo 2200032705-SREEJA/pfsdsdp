@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Voting Animation</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .picture-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .picture {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #333;
+            margin: 50px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            animation: slideIn 1s ease-out;
+        }
+        .name {
+            margin: 10px;
+        }
+        .vote-button {
+            padding: 12px 70px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="picture-container">
+        <div class="picture" style="background-image: url('https://www.telugubulletin.com/wp-content/uploads/2019/11/160718-tdp.jpg');"></div>
+        <div class="name"><h2>TDP</h2></div>
+        <button class="vote-button">Vote</button>
+    </div>
+    <div class="picture-container">
+        <div class="picture" style="background-image: url('https://th.bing.com/th/id/R.328f33f68eadc2ee7ca0c58a1764716c?rik=%2bRJNQ1xsQpP1Iw&riu=http%3a%2f%2f2.bp.blogspot.com%2f-AZG2T7MfwzI%2fUy5604lO_VI%2fAAAAAAAAAYA%2f4DK0QoQa2yw%2fs1600%2fJana-Sena-Party-Logo-Wallpaper.jpg&ehk=ryJhFVj1HzCjV8Pc4TiTH2FWJaee1f1OOadUwIQXmNw%3d&risl=&pid=ImgRaw&r=0');"></div>
+        <div class="name"><h2>JENASENA</h2></div>
+        <button class="vote-button">Vote</button>
+    </div>
+    <div class="picture-container">
+        <div class="picture" style="background-image: url('https://4.bp.blogspot.com/-URiCjwBMxVc/TtzXRyJi90I/AAAAAAAADj8/MrZd0T5ewIg/s1600/bjp-flag.jpg');"></div>
+        <div class="name"><h2>BJP</h2></div>
+        <button class="vote-button">Vote</button>
+    </div>
+    <div class="picture-container">
+        <div class="picture" style="background-image: url('https://qph.fs.quoracdn.net/main-qimg-2b60b97c4135f698bd9f5a7dab9d93ec');"></div>
+        <div class="name"><h2>YSRCP</h2></div>
+        <button class="vote-button">Vote</button>
+    </div>
+    <!-- <div class="picture-container">
+        <div class="picture" style="background-image: url('https://static.india.com/wp-content/uploads/2019/05/CPI-Logo-1.jpg');"></div>
+        <div class="name"><h2>CPI</h2></div>
+        <button class="vote-button">Vote</button>
+    </div> -->
+    <div class="picture-container">
+        <div class="picture" style="background-image: url('https://www.oneindia.com/img/2016/03/nota-04-1457086162.jpg');"></div>
+        <div class="name"><h2>NOTA</h2></div>
+        <button class="vote-button">Vote</button>
+    </div>
+
+<script>
+    const voteButtons = document.querySelectorAll('.vote-button');
+
+    voteButtons.forEach(button => {
+        button.addEventListener('click', () => {
+        alert('Are you ok for voting to these Party!');
+            if (button.textContent === 'Vote') {
+                button.textContent = 'Voted';
+                button.classList.add('voted-button');
+                button.disabled = true;
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
